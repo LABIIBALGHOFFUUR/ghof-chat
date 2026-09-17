@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHOF CHAT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#075E54">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+<body>
+
+    <!-- HALAMAN LOGIN -->
+    <div id="login-page" class="page active">
+        <div class="login-box">
+            <h1>GHOF CHAT</h1>
+            <p>Masuk tanpa API, Aman & Gratis</p>
+            <input type="number" id="login-number" placeholder="Nomor HP (contoh: 08123456)">
+            <input type="password" id="login-pin" placeholder="PIN (Buat sendiri)">
+            <button onclick="handleLogin()">MASUK</button>
+            <p id="login-msg"></p>
+        </div>
+    </div>
+
+    <!-- HALAMAN CHAT -->
+    <div id="chat-page" class="page">
+        <div class="header">
+            <h3>GHOF CHAT</h3>
+            <button onclick="logout()" class="btn-logout">Keluar</button>
+        </div>
+        <div id="chat-box">
+            <!-- Pesan akan muncul di sini -->
+        </div>
+        <div class="input-area">
+            <input type="text" id="message-input" placeholder="Ketik pesan...">
+            <button onclick="sendMessage()">Kirim</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
